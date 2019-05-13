@@ -1,3 +1,4 @@
+"""This file cloned from: https://gist.github.com/u112358/ecf1bbb14d3001768562c9cf88f7d21a"""
 """Simple example on how to log scalars and images to tensorboard without tensor ops.
 License: Copyleft
 """
