@@ -1,2 +1,3 @@
-# randomized_telescopes_code
-Code for "Efficient optimization of loops and limits with randomized telescoping sums"
+Code for "Efficient optimization of loops and limits with randomized telescoping sums".
+
+Todo: finish cleaning up and commenting, adding run commands
