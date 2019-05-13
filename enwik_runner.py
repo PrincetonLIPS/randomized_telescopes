@@ -45,7 +45,7 @@ flags.DEFINE_integer('batch_size', 128, '')
 flags.DEFINE_integer('eval_batch_size', 128, '')
 flags.DEFINE_integer('test_batch_size', 1, '')
 
-flags.DEFINE_integer('horizon_multiplier', 6, '')
+flags.DEFINE_integer('horizon_multiplier', 1, '')
 
 flags.DEFINE_float('act_reg', 0.0, '')
 flags.DEFINE_float('temp_act_reg', 0.0, '')
@@ -82,7 +82,7 @@ flags.DEFINE_integer('calibrate_frequency', 5, 'calibrate freq')
 flags.DEFINE_boolean('compute_penalty', False, 'penalize RT due to multiple '
                      'computations required')
 
-flags.DEFINE_integer('budget', 25000, 'multiple of test_horizon we run for')
+flags.DEFINE_integer('budget', 250000, 'multiple of test_horizon we run for')
 
 flags.DEFINE_boolean('clip_intermediate', False,
                      'clip intermediate grads to '

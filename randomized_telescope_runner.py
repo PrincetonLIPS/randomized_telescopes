@@ -80,6 +80,9 @@ flags.DEFINE_string('f', '', 'kernel - hack to work with jupyter')
 flags.DEFINE_float('variance_weight', 1.0, 'Controls weight on variance '
                    'vs compute')
 
+flags.DEFINE_boolean('use_tflogger', False, 'Use tflogger')
+
+
 def clip_by_norm(array, norm):
     if isinstance(array, list):
         return clip_by_norm_list(array, norm)
@@ -153,8 +156,18 @@ def make_logger():
 
     logger.addHandler(
         logging.FileHandler(os.path.join(path, 'out.log')))
-
-    tflogger = TFLogger(path)
+    
+    if FLAGS.use_tflogger:
+        tflogger = TFLogger(path)
+    else:
+        class TFLoggerDummy(object):
+            def __init__(self):
+                pass
+            def log_scalar(self, *args, **kwargs):
+                pass
+            def log_images(self, *args, **kwargs):
+                pass
+        tflogger = TFLoggerDummy()
 
     logger.info(str(FLAGS.flag_values_dict()))
 
